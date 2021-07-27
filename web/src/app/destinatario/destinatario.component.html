@@ -1,0 +1,79 @@
+
+
+<div class="group-list-container">
+  
+    <form #formDestinatario="ngForm" (ngSubmit)="onSubmit()">
+
+      <h3>Nuevo Destinatario</h3>
+
+       <div >
+            <mat-form-field class="group-name espacio" appearance="standard">
+              <mat-label>Nombre</mat-label>
+              <input name="nombre" #nombre="ngModel" [(ngModel)]="destinatario.nombre" matInput/>
+            </mat-form-field>
+        
+            
+            <mat-form-field class="group-name " appearance="standard">
+              <mat-label>Rut</mat-label>
+              <input  name="rut" #rut="ngModel" [(ngModel)]="destinatario.rut" matInput />
+            </mat-form-field>
+        </div>
+        <div>  
+            <mat-form-field class="group-name espacio" appearance="standard">
+              <mat-label>Correo</mat-label>
+              <input name="correo" #correo="ngModel" [(ngModel)]="destinatario.correo" matInput />
+            </mat-form-field>
+  
+          
+            <mat-form-field class="group-name" appearance="standard">
+              <mat-label>Número de Teléfono</mat-label>
+              <input  name="ntelefono" #ntelefono="ngModel" [(ngModel)]="destinatario.ntelefono" matInput />
+            </mat-form-field>
+        </div> 
+
+        <div>
+            <mat-form-field class="group-name espacio" appearance="standard">
+              <mat-label>Banco de Destino</mat-label>
+              <mat-select  name="banco_destino" #banco_destina="ngModel" [(ngModel)]="destinatario.banco_destino">
+                <mat-option *ngFor="let dt of rechazo"  [value]="dt.name">
+                                        {{dt.name}}
+                </mat-option>
+             
+              </mat-select>
+
+              
+            </mat-form-field>
+  
+            <mat-form-field class="group-name" appearance="standard">
+              <mat-label>Tipo cuenta</mat-label>
+              <mat-select name="tipo_cuenta" #tipo_cuenta="ngModel" [(ngModel)]="destinatario.tipo_cuenta">
+                <mat-option value="0">Option</mat-option>
+                <mat-option value="cuenta_vista">Cuenta Vista</mat-option>
+                <mat-option value="cuenta_ahorro">Cuenta Ahorro</mat-option>
+                <mat-option value="cuenta_corriente">Cuenta Corriente</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="group-name" appearance="standard">
+              <mat-label>Número Cuenta</mat-label>
+              <input name="numero_cuenta" #numero_cuenta="ngModel" [(ngModel)]="destinatario.numero_cuenta" matInput  />
+            </mat-form-field>
+        </div>
+  
+      <div class="form-buttons">
+       <!-- <button mat-raised-button color="primary" type="button" aria-label="Aceptar"
+           title="Aceptar" (click)="agregaDestinatario()">
+          Aceptar
+        </button>
+-->
+    
+
+
+        <input mat-raised-button color="primary" type="submit" value="Aceptar">
+      </div>
+    </form>
+  </div>
+
+

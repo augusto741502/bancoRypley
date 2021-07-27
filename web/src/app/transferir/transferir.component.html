@@ -1,0 +1,54 @@
+<div class="group-list-container">
+  
+    <form #formDestinatario="ngForm" (ngSubmit)="onSubmit()">
+
+      <h3>Transferir</h3>
+
+       <div>
+            <mat-form-field class="group-name" appearance="standard">
+              <mat-label>Busca Destinatario</mat-label>
+              <mat-select  name="id" #id="ngModel" [(ngModel)]="transferir.id" (selectionChange)="onchange(this)">
+                <mat-option *ngFor="let dt of rechazo"  [value]="dt.id">
+                                        {{dt.nombre}}
+                </mat-option>
+             
+              </mat-select>
+            </mat-form-field>
+
+            <div>
+              <strong>Detalle del Destinatario</strong> 
+            </div>
+
+           <div *ngFor="let dt of destino">
+             <div>
+               <label><strong>Nombre:</strong></label>
+               {{dt.nombre}}
+             </div>   
+             <div>
+              <label><strong>Correo:</strong></label>
+              {{dt.correo}}
+            </div>
+
+            <div>
+              <label><strong>Banco</strong></label>
+              {{dt.banco_destino}}
+            </div>
+            <div>
+              <label><strong>Tipo de Cuenta</strong></label>
+              {{dt.tipo_cuenta}}
+            </div>
+                
+               
+            </div>
+           
+            
+            <mat-form-field class="group-name" appearance="standard">
+              <mat-label>Monto</mat-label>
+              <input name="monto" #monto="ngModel" [(ngModel)]="transferir.monto" matInput />
+            </mat-form-field>
+        </div>
+        <input mat-raised-button color="primary" type="submit" value="Aceptar">
+    
+    </form>
+  </div>
+

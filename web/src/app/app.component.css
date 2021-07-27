@@ -1,0 +1,31 @@
+.padre {
+    background-color: #fafafa;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    width: 50%;
+
+    /* IMPORTANTE */
+    /*text-align: center;*/
+  }
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   /* background-color: #333333;*/
+  }
+  
+  li {
+    float: right;
+
+    padding-left: 10px;
+  }
+
+
+  span{
+      padding-right: 100px;
+  }
+  
